@@ -6,7 +6,7 @@ define("ROOT_PATH", __DIR__ . "/..");
 
 $app = new Silex\Application();
 
-require __DIR__ . '/../resources/config/prod.php';
+require __DIR__ . '/../resources/config/dev_mysql.php';
 
 require __DIR__ . '/../src/app.php';
 
