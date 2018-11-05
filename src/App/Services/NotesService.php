@@ -15,6 +15,11 @@ class NotesService extends BaseService
         return $this->db->fetchAll("SELECT * FROM notes");
     }
 
+    public function getAllByUser($userId)
+    {
+        return $this->db->fetchAll("SELECT * FROM notes WHERE id_user=?", [(int) $userId]);
+    }
+
     function save($note)
     {
         $this->db->insert("notes", $note);

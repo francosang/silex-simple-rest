@@ -37,6 +37,8 @@ class RoutesLoader
         $api->put('/notes/{id}', "notes.controller:update");
         $api->delete('/notes/{id}', "notes.controller:delete");
 
+        // notas de un usuario
+        $api->get('/users/{userId}/notes', "notes.controller:getAllByUser");
 
         // CRUD users
         $api->get('/users', "users.controller:getAll");

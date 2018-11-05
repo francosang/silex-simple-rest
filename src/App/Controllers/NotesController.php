@@ -26,6 +26,11 @@ class NotesController
         return new JsonResponse($this->notesService->getAll());
     }
 
+    public function getAllByUser($userId)
+    {
+        return new JsonResponse($this->notesService->getAllByUser($userId));
+    }
+
     public function save(Request $request)
     {
 
