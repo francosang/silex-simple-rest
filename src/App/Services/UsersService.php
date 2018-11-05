@@ -15,6 +15,11 @@ class UsersService extends BaseService
         return $this->db->fetchAll("SELECT id, name, email FROM users");
     }
 
+    public function login($email, $pass)
+    {
+        return $this->db->fetchAssoc("SELECT id, name, email FROM users WHERE email=? and pass=?", [$email, $pass]);
+    }
+
     function save($user)
     {
         $this->db->insert("users", $user);

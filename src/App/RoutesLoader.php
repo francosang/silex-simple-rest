@@ -39,6 +39,7 @@ class RoutesLoader
 
         // notas de un usuario
         $api->get('/users/{userId}/notes', "notes.controller:getAllByUser");
+        $api->post('/users/login', "users.controller:login");
 
         // CRUD users
         $api->get('/users', "users.controller:getAll");

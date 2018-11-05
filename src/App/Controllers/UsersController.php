@@ -34,6 +34,18 @@ class UsersController
 
     }
 
+    public function login(Request $request)
+    {
+
+        $user_param = $request->request->get("email");
+        $pass_param = $request->request->get("pass");
+
+        $user = $this->usersService->login($user_param, $pass_param);
+
+        return new JsonResponse($user);
+
+    }
+
     public function update($id, Request $request)
     {
         $user = $this->getDataFromRequest($request);
