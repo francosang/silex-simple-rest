@@ -42,8 +42,11 @@ class UsersController
 
         $user = $this->usersService->login($user_param, $pass_param);
 
-        return new JsonResponse($user);
-
+        if ($user) {
+            return new JsonResponse($user);
+        } else {
+            return new Response('Not found', 404); 
+        }
     }
 
     public function update($id, Request $request)
