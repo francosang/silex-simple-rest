@@ -18,6 +18,10 @@ class ServicesLoader
         $this->app['notes.service'] = function() {
             return new Services\NotesService($this->app["db"]);
         };
+
+        $this->app['users.service'] = function() {
+            return new Services\UsersService($this->app["db"]);
+        };
     }
 }
 
